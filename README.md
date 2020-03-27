@@ -1,68 +1,126 @@
+# tontonaja
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project can access on uri (https://catnuxer.github.io/tontonaja/).
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Run](#run)
 
-### `yarn start`
+- [Thirdparty](#thirdparty)
 
-Runs the app in the development mode.<br />
+- [Api](#api)
+
+- [Test](#test)
+
+- [Deployment](#deployment)
+
+### Run
+
+Before you try run this project, make sure u done with
+
+```bash
+
+$ npm install
+
+```
+
+Runs the app in the development mode. You can use:
+
+```bash
+
+$ npm run start
+
+```
+
+<br  />
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
+The page will reload if you make edits.<br  />
+
 You will also see any lint errors in the console.
 
-### `yarn test`
+### Thirdparty
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Thirdparty are not limited to component, state management, side effects, test unit, etc.
 
-### `yarn build`
+#### Component
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Some of Component adabtable from material-ui https://material-ui.com/
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### State Management
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project use state management redux https://redux.js.org/
 
-### `yarn eject`
+#### Side Effects
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project use side effects with redux-saga https://redux-saga.js.org/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Test Unit
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project use test unit library from jest https://jestjs.io/ and enzyme https://enzymejs.github.io/enzyme/
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Api
 
-## Learn More
+The Api of this project are following the documentations from https://developers.themoviedb.org/3/getting-started/introduction
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Home
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Browse trending and popular movies, and search all movies by title.
 
-### Code Splitting
+Search:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Api Search -> Movie -> query={title} uri encode
 
-### Analyzing the Bundle Size
+Banner:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- max 6 movie
+- Api Discover -> Movie Discover -> Query -> page=1&sort_by=popularity.desc&release_date.gte=2020-03-26&year=2020
 
-### Making a Progressive Web App
+Suggestion:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- max 20 movie
+- Api Discover -> Movie Discover -> Query -> page=1&sort_by=vote_average.desc&release_date.gte=2020-03-26&year=2020
 
-### Advanced Configuration
+Latest Movie:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- max 20 movie
+- Api Discover -> Movie Discover -> Query -> page=1&sort_by=primary_release_date.desc&primary_release_date.lte=2020-03-26
 
-### Deployment
+Latest TV Series:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- max 20 movie
+- Api Discover -> TV Discover -> Query -> page=1&sort_by=popularity.desc&first_air_date.gte=2020-03-26
 
-### `yarn build` fails to minify
+#### Detail Movie
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+View relevant details of a particular movie including but not limited to title, overview, release year, runtime and cast members.
+
+Layout:
+
+- Api Movie -> Detail -> {movieId} -> Query -> append_to_response=video,images,credits,jobs
+
+#### Actor Detail
+
+View details of specific actor or actress including but not limited to name, bio, birth date and list of movies in which have worked
+
+Layout:
+
+- Api People -> Detail -> {peopleId}
+
+### Test
+
+To run test unit scenario
+
+```bash
+$ npm run test
+```
+
+### Deployment Process
+
+This project deploy on github. And you can use command
+
+```bash
+$ npm run deploy
+```
