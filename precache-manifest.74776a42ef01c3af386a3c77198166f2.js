@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d81b745e05ef1d5c0dc359f7cd73d088",
+    "revision": "c7af6d87ec26058bef8a9242c2668afd",
     "url": "/tontonaja/index.html"
   },
   {
-    "revision": "a09b589e82d4f6549b4b",
-    "url": "/tontonaja/static/css/main.5f361e03.chunk.css"
+    "revision": "804ab05f2185382d460f",
+    "url": "/tontonaja/static/css/main.523f09c5.chunk.css"
   },
   {
     "revision": "5cf5e3087d3a97375001",
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tontonaja/static/js/2.6b57ddc8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a09b589e82d4f6549b4b",
-    "url": "/tontonaja/static/js/main.9310565e.chunk.js"
+    "revision": "804ab05f2185382d460f",
+    "url": "/tontonaja/static/js/main.8209b778.chunk.js"
   },
   {
     "revision": "55a9d741a471aac1626e",
     "url": "/tontonaja/static/js/runtime-main.5e12bc16.js"
   },
   {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/tontonaja/static/media/logo.5d5d9eef.svg"
+    "revision": "ee7cd8ed2dcec943251eb2763684fc6f",
+    "url": "/tontonaja/static/media/logo.ee7cd8ed.svg"
   }
 ]);

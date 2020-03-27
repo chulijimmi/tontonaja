@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/tontonaja/static/css/main.5f361e03.chunk.css",
-    "main.js": "/tontonaja/static/js/main.9310565e.chunk.js",
-    "main.js.map": "/tontonaja/static/js/main.9310565e.chunk.js.map",
+    "main.css": "/tontonaja/static/css/main.523f09c5.chunk.css",
+    "main.js": "/tontonaja/static/js/main.8209b778.chunk.js",
+    "main.js.map": "/tontonaja/static/js/main.8209b778.chunk.js.map",
     "runtime-main.js": "/tontonaja/static/js/runtime-main.5e12bc16.js",
     "runtime-main.js.map": "/tontonaja/static/js/runtime-main.5e12bc16.js.map",
     "static/js/2.6b57ddc8.chunk.js": "/tontonaja/static/js/2.6b57ddc8.chunk.js",
     "static/js/2.6b57ddc8.chunk.js.map": "/tontonaja/static/js/2.6b57ddc8.chunk.js.map",
     "index.html": "/tontonaja/index.html",
-    "precache-manifest.3f6ee91b7c7110953cd1628a723e8351.js": "/tontonaja/precache-manifest.3f6ee91b7c7110953cd1628a723e8351.js",
+    "precache-manifest.74776a42ef01c3af386a3c77198166f2.js": "/tontonaja/precache-manifest.74776a42ef01c3af386a3c77198166f2.js",
     "service-worker.js": "/tontonaja/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/tontonaja/static/css/main.5f361e03.chunk.css.map",
+    "static/css/main.523f09c5.chunk.css.map": "/tontonaja/static/css/main.523f09c5.chunk.css.map",
     "static/js/2.6b57ddc8.chunk.js.LICENSE.txt": "/tontonaja/static/js/2.6b57ddc8.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/tontonaja/static/media/logo.5d5d9eef.svg"
+    "static/media/logo.svg": "/tontonaja/static/media/logo.ee7cd8ed.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5e12bc16.js",
     "static/js/2.6b57ddc8.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.9310565e.chunk.js"
+    "static/css/main.523f09c5.chunk.css",
+    "static/js/main.8209b778.chunk.js"
   ]
 }
