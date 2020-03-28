@@ -5,12 +5,8 @@ function* __getCountries() {
   try {
     const uri = "/3/configuration/countries";
     const response = yield call(httpGet, uri);
-    console.log("response __getCountries", response);
     const json = yield call([response, response.json]);
-    console.log("json __getCountries", json);
     yield put(setCountry(json));
-    const countries = yield select(state => state.Countries);
-    console.log("countries", countries);
   } catch (error) {
     throw error;
   }

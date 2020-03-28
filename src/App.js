@@ -5,14 +5,13 @@ import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./Store";
 import HeaderComponent from "./Header/header-component";
 
-const ConnectedHome = lazy(() => import("./Modules/Home"));
-const ConnectedMovie = lazy(() => import("./Modules/Movie"));
+export const ConnectedHome = lazy(() => import("./Modules/Home"));
+export const ConnectedMovie = lazy(() => import("./Modules/Movie"));
 
 const store = configureStore();
 const location = `${process.env.PUBLIC_URL}`;
 
 function MainApp({ history, context }) {
-  console.log("MainApp", { history, context });
   return (
     <ConnectedRouter history={history} context={context}>
       <Suspense fallback={<div>Loading App...</div>}>
