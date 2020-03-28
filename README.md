@@ -109,6 +109,20 @@ Layout:
 
 - Api People -> Detail -> {peopleId}
 
+#### Configuration
+
+This api is using for config relate on images size, countries
+
+- Api Configuration -> Countries
+- Api Configuration -> Api Configuration
+
+#### Genres
+
+This api is using for config relate on genre movie list and tv list
+
+- Api Genres -> Movie List
+- Api Genres -> TV List
+
 ### Test
 
 To run test unit scenario
