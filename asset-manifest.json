@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/tontonaja/static/css/main.523f09c5.chunk.css",
-    "main.js": "/tontonaja/static/js/main.8209b778.chunk.js",
-    "main.js.map": "/tontonaja/static/js/main.8209b778.chunk.js.map",
-    "runtime-main.js": "/tontonaja/static/js/runtime-main.5e12bc16.js",
-    "runtime-main.js.map": "/tontonaja/static/js/runtime-main.5e12bc16.js.map",
-    "static/js/2.6b57ddc8.chunk.js": "/tontonaja/static/js/2.6b57ddc8.chunk.js",
-    "static/js/2.6b57ddc8.chunk.js.map": "/tontonaja/static/js/2.6b57ddc8.chunk.js.map",
+    "main.css": "/tontonaja/static/css/main.498d002a.chunk.css",
+    "main.js": "/tontonaja/static/js/main.2c0dbc68.chunk.js",
+    "main.js.map": "/tontonaja/static/js/main.2c0dbc68.chunk.js.map",
+    "runtime-main.js": "/tontonaja/static/js/runtime-main.9fd8974d.js",
+    "runtime-main.js.map": "/tontonaja/static/js/runtime-main.9fd8974d.js.map",
+    "static/js/2.3077f7c5.chunk.js": "/tontonaja/static/js/2.3077f7c5.chunk.js",
+    "static/js/2.3077f7c5.chunk.js.map": "/tontonaja/static/js/2.3077f7c5.chunk.js.map",
+    "static/js/3.b9eeec5d.chunk.js": "/tontonaja/static/js/3.b9eeec5d.chunk.js",
+    "static/js/3.b9eeec5d.chunk.js.map": "/tontonaja/static/js/3.b9eeec5d.chunk.js.map",
+    "static/js/4.c9a12467.chunk.js": "/tontonaja/static/js/4.c9a12467.chunk.js",
+    "static/js/4.c9a12467.chunk.js.map": "/tontonaja/static/js/4.c9a12467.chunk.js.map",
     "index.html": "/tontonaja/index.html",
-    "precache-manifest.74776a42ef01c3af386a3c77198166f2.js": "/tontonaja/precache-manifest.74776a42ef01c3af386a3c77198166f2.js",
+    "precache-manifest.1ed7549a1fd9a939af4275bc0863a32c.js": "/tontonaja/precache-manifest.1ed7549a1fd9a939af4275bc0863a32c.js",
     "service-worker.js": "/tontonaja/service-worker.js",
-    "static/css/main.523f09c5.chunk.css.map": "/tontonaja/static/css/main.523f09c5.chunk.css.map",
-    "static/js/2.6b57ddc8.chunk.js.LICENSE.txt": "/tontonaja/static/js/2.6b57ddc8.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/tontonaja/static/media/logo.ee7cd8ed.svg"
+    "static/css/main.498d002a.chunk.css.map": "/tontonaja/static/css/main.498d002a.chunk.css.map",
+    "static/js/2.3077f7c5.chunk.js.LICENSE.txt": "/tontonaja/static/js/2.3077f7c5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5e12bc16.js",
-    "static/js/2.6b57ddc8.chunk.js",
-    "static/css/main.523f09c5.chunk.css",
-    "static/js/main.8209b778.chunk.js"
+    "static/js/runtime-main.9fd8974d.js",
+    "static/js/2.3077f7c5.chunk.js",
+    "static/css/main.498d002a.chunk.css",
+    "static/js/main.2c0dbc68.chunk.js"
   ]
 }
