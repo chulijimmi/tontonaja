@@ -3,9 +3,7 @@ import { Provider, ReactReduxContext } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./Store";
-// import { ConnectedHome } from "./Modules/Home";
-// import { ConnectedMovie } from "./Modules/Movie";
-import Loadable from "react-loadable";
+import HeaderComponent from "./Header/header-component";
 
 const ConnectedHome = lazy(() => import("./Modules/Home"));
 const ConnectedMovie = lazy(() => import("./Modules/Movie"));
@@ -18,6 +16,7 @@ function MainApp({ history, context }) {
   return (
     <ConnectedRouter history={history} context={context}>
       <Suspense fallback={<div>Loading App...</div>}>
+        <HeaderComponent />
         <Switch>
           <Route
             exact
