@@ -7,14 +7,13 @@ import configureStore, { history } from "./Store";
 // import { ConnectedMovie } from "./Modules/Movie";
 import Loadable from "react-loadable";
 
-const ConnectedHome = lazy(() => import("./Modules/Home"));
-const ConnectedMovie = lazy(() => import("./Modules/Movie"));
+export const ConnectedHome = lazy(() => import("./Modules/Home"));
+export const ConnectedMovie = lazy(() => import("./Modules/Movie"));
 
 const store = configureStore();
 const location = `${process.env.PUBLIC_URL}`;
 
 function MainApp({ history, context }) {
-  console.log("MainApp", { history, context });
   return (
     <ConnectedRouter history={history} context={context}>
       <Suspense fallback={<div>Loading App...</div>}>
