@@ -1,9 +1,12 @@
-@import "../../CoreScss/fontstyle";
 @import "../../CoreScss/variable";
 @import "../../CoreScss/mixins";
 
+/** Container Component **/
 .container {
-  padding: $padding $padding-big;
+  margin: $margin $margin-big;
   background-color: $color-dark;
   display: flow-root;
+  @include breakpoint(mobile) {
+    margin: $margin;
+  }
 }

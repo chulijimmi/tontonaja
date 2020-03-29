@@ -25,11 +25,4 @@ describe("App", () => {
     expect(jsonApp.children).toHaveLength(1);
     expect(jsonApp.children[0]).toBe("Loading App...");
   });
-  it("render child component", async () => {
-    const wrapper = await create(<App />);
-    await ConnectedHome;
-    await ConnectedMovies;
-    const jsonApp = wrapper.toJSON();
-    expect(jsonApp.length).toBe(2);
-  });
 });

@@ -1,21 +1,20 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { countryLoaded } from "../Countries/countries-action";
 import { genreLoaded } from "../Genres/genres-action";
-
-const location = `${process.env.PUBLIC_URL}`;
+import { movieLoaded } from "../Movies/movies-action";
+import CarouselComponent from "./home-carousel";
 
 function Home(props) {
   useEffect(() => {
     props.countryLoaded();
     props.genreLoaded();
+    props.movieLoaded();
   }, []);
 
   return (
     <div>
-      <p>This is Home</p>
-      <Link to={`${location}/movie`}>Movie</Link>
+      <CarouselComponent />
     </div>
   );
 }
@@ -24,4 +23,8 @@ const mapStateToProps = ({ Countries }) => {
   return { Countries };
 };
 
-export default connect(mapStateToProps, { countryLoaded, genreLoaded })(Home);
+export default connect(mapStateToProps, {
+  countryLoaded,
+  genreLoaded,
+  movieLoaded
+})(Home);
