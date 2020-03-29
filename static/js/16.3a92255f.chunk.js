@@ -1,0 +1,2 @@
+(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[16],{262:function(e,n,t){"use strict";t.r(n);var a=t(1),c=t.n(a),o=t(16);n.default=Object(o.c)()((function(e){return console.log("Props Search",e),c.a.createElement("div",null,c.a.createElement("p",null,"This is Search"))}))}}]);
+//# sourceMappingURL=16.3a92255f.chunk.js.map
