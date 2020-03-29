@@ -1,0 +1,22 @@
+/*
+* Responsive Break Point
+*/
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (min-width: 320px) and (max-width: 720px) {
+      @content;
+    }
+  }
+}

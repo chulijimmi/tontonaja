@@ -1,13 +1,15 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { countryLoaded } from "../Countries/countries-action";
+import { genreLoaded } from "../Genres/genres-action";
 
 const location = `${process.env.PUBLIC_URL}`;
 
 function Home(props) {
   useEffect(() => {
     props.countryLoaded();
+    props.genreLoaded();
   }, []);
 
   return (
@@ -22,4 +24,4 @@ const mapStateToProps = ({ Countries }) => {
   return { Countries };
 };
 
-export default connect(mapStateToProps, { countryLoaded })(Home);
+export default connect(mapStateToProps, { countryLoaded, genreLoaded })(Home);

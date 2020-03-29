@@ -1,0 +1,32 @@
+// -------- Coloring and Variables -------- //
+$coloring: (
+  primary: #007a2f,
+  primary-light: #17b353,
+  secondary: #e96b3b,
+  clean: #ffffff,
+  dark: #221e2c,
+  dark-deep: #1b1922
+);
+
+$color-primary: map-get($coloring, primary);
+$color-primary-light: map-get($coloring, primary-light);
+$color-secondary: map-get($coloring, secondary);
+$color-white: map-get($coloring, clean);
+$color-dark: map-get($coloring, dark);
+$color-dark-deep: map-get($coloring, dark-deep);
+
+$padding: 15px;
+$padding-big: 30px;
+$padding-small: 5px;
+
+$margin: 15px;
+$margin-big: 30px;
+$margin-small: 5px;
+
+// -------- TYPOGRAPHY -------- //
+$p: 14px;
+$h1: 36px;
+$h2: 30px;
+$h3: 24px;
+$h4: 18px;
+$h5: 16px;

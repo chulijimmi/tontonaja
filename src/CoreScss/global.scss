@@ -1,0 +1,53 @@
+@import "../CoreScss/fontstyle";
+@import "../CoreScss/variable";
+@import "../CoreScss/mixins";
+
+body {
+  font-family: $noto-font;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flow {
+  display: flow-root;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
+}
+
+h4 {
+  font-size: $h4;
+}
+
+h5 {
+  font-size: $h5;
+}

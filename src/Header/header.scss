@@ -1,0 +1,53 @@
+@import "../CoreScss/fontstyle";
+@import "../CoreScss/variable";
+@import "../CoreScss/mixins";
+
+.container {
+  width: 100%;
+  height: auto;
+  padding: 0px 30px;
+}
+
+.header-container {
+  padding: $padding $padding-big;
+  background-color: $color-dark;
+  display: flow-root;
+}
+
+.header-menu-container {
+  align-items: center;
+  .header-menu {
+    float: left;
+    margin-left: $margin-big;
+    margin-right: $margin-big;
+    margin-top: $margin-small;
+    color: #5f8d71;
+    transition: color 1s;
+    cursor: pointer;
+  }
+  :hover {
+    color: $color-primary-light;
+  }
+
+  .header-menu-active {
+    color: $color-primary;
+  }
+}
+
+.header-logo {
+  float: left;
+  padding: $padding;
+  background-color: $color-white;
+
+  .logo-title {
+    color: $color-primary !important;
+    font-size: 18px;
+    margin: 0 auto;
+  }
+}
+
+.link-container {
+  display: inline-flex;
+  margin: 5px;
+  position: relative;
+}

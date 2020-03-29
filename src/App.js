@@ -3,13 +3,65 @@ import { Provider, ReactReduxContext } from "react-redux";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./Store";
-import HeaderComponent from "./Header/header-component";
-
+import { location } from "./Env";
+import "./CoreScss/global.scss";
+/**
+ * Do to test unit need to exports of Component
+ */
+export const HeaderComponent = lazy(() => import("./Header/header-component"));
 export const ConnectedHome = lazy(() => import("./Modules/Home"));
-export const ConnectedMovie = lazy(() => import("./Modules/Movie"));
+export const ConnectedGenres = lazy(() => import("./Modules/Genres"));
+export const ConnectedCountries = lazy(() => import("./Modules/Countries"));
+export const ConnectedMovies = lazy(() => import("./Modules/Movies"));
+export const ConnectedTvSeries = lazy(() => import("./Modules/TvSeries"));
+export const ConnectedSearch = lazy(() => import("./Modules/Search"));
 
 const store = configureStore();
-const location = `${process.env.PUBLIC_URL}`;
+
+const routeMap = [
+  {
+    id: "root",
+    path: `${location}/`,
+    component: null,
+    parent: true
+  },
+  {
+    id: "home",
+    path: `${location}/home`,
+    component: ConnectedHome,
+    parent: false
+  },
+  {
+    id: "genre",
+    path: `${location}/genre`,
+    component: ConnectedGenres,
+    parent: false
+  },
+  {
+    id: "country",
+    path: `${location}/country`,
+    component: ConnectedCountries,
+    parent: false
+  },
+  {
+    id: "movie",
+    path: `${location}/movie`,
+    component: ConnectedMovies,
+    parent: false
+  },
+  {
+    id: "tvserie",
+    path: `${location}/tvserie`,
+    component: ConnectedTvSeries,
+    parent: false
+  },
+  {
+    id: "search",
+    path: `${location}/search`,
+    component: ConnectedSearch,
+    parent: false
+  }
+];
 
 function MainApp({ history, context }) {
   return (
@@ -17,23 +69,29 @@ function MainApp({ history, context }) {
       <Suspense fallback={<div>Loading App...</div>}>
         <HeaderComponent />
         <Switch>
-          <Route
-            exact
-            path={`${location}/`}
-            render={() => <Redirect to={`${location}/home`} />}
-          />
-          <Route
-            path={`${location}/home`}
-            render={({ staticContext, ...props }) => (
-              <ConnectedHome {...props} />
-            )}
-          />
-          <Route
-            path={`${location}/movie`}
-            render={({ staticContext, ...props }) => (
-              <ConnectedMovie {...props} />
-            )}
-          />
+          {routeMap.map(item => {
+            const RouteComponent = item.component;
+            if (item.parent) {
+              return (
+                <Route
+                  key={item.id}
+                  exact
+                  path={item.path}
+                  render={() => <Redirect to={`${location}/home`} />}
+                />
+              );
+            } else {
+              return (
+                <Route
+                  key={item.id}
+                  path={item.path}
+                  render={({ staticContext, ...props }) => (
+                    <RouteComponent {...props} />
+                  )}
+                />
+              );
+            }
+          })}
         </Switch>
       </Suspense>
     </ConnectedRouter>

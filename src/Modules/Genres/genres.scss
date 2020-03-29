@@ -1,0 +1,51 @@
+@import "../../CoreScss/fontstyle";
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+/* ----- Genre Link Button Element on Header ----- */
+.genre-button {
+  color: $color-dark;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color 300ms ease;
+  -moz-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.genre-button:hover {
+  padding: $padding-small $padding;
+  color: $color-white;
+  border: 1px solid $color-primary-light;
+  background-color: $color-primary-light;
+}
+
+.genre-container {
+  width: 540px;
+}
+
+.genre-link {
+  margin-bottom: $margin;
+}
+
+.genre-item {
+  margin-right: $margin;
+  margin-bottom: $margin;
+  width: 165px;
+  display: block;
+}
+
+.genre-movie {
+  display: flow-root;
+}
+
+.genre-tv {
+  display: flex-root;
+}
+
+.genre-title {
+  color: $color-primary-light;
+}

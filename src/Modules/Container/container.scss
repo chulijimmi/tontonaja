@@ -1,0 +1,9 @@
+@import "../../CoreScss/fontstyle";
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.container {
+  padding: $padding $padding-big;
+  background-color: $color-dark;
+  display: flow-root;
+}

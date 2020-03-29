@@ -1,0 +1,32 @@
+@import "../../CoreScss/fontstyle";
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.popup-area {
+  z-index: 1001;
+  box-shadow: 0 19px 20px rgba(139, 139, 139, 0.3),
+    0 10px 12px rgba(102, 102, 102, 0.22);
+  border-radius: 5px;
+}
+
+.popup-area-active {
+  position: absolute;
+  top: 50px;
+  left: $margin-big;
+  background-color: $color-white;
+}
+
+.popup-menu {
+  padding: $padding;
+  border-radius: 5px;
+  width: auto;
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $color-white;
+    position: absolute;
+    top: -10px;
+  }
+}
