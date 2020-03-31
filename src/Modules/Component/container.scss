@@ -3,10 +3,9 @@
 
 /** Container Component **/
 .container {
-  margin: $margin $margin-big;
   background-color: $color-dark;
   display: flow-root;
-  @include breakpoint(mobile) {
-    margin: $margin;
-  }
+  width: auto;
+  padding-left: $padding-big;
+  padding-right: $padding-big;
 }

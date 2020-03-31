@@ -1,0 +1,45 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins.scss";
+
+.movie-thumbnail-popup {
+  position: absolute;
+  z-index: 1003;
+  display: block;
+  bottom: 220px;
+  float: left;
+  padding: $padding;
+  background-color: $color-white;
+  margin: 0 auto;
+  border-radius: 4px;
+  .title {
+    color: $color-primary;
+    border-bottom: 1px solid $color-grey-light;
+    padding: $padding-small 0px;
+    font-weight: 500;
+    margin-block-start: 0px;
+  }
+  .overview {
+    text-align: justify;
+  }
+  :last-child {
+    right: 260px;
+  }
+  .rating {
+    color: $color-secondary;
+    .genre {
+      margin-right: $margin-small;
+      margin-left: $margin-small;
+      color: $color-dark;
+    }
+  }
+  .release-date {
+    padding: $padding-small;
+    background-color: $color-dark-deep;
+    color: $color-white;
+    font-size: 11px;
+    @include rounded(4px);
+  }
+  .watch-now {
+    @include button;
+  }
+}

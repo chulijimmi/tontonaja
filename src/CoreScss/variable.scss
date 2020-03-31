@@ -4,8 +4,9 @@ $coloring: (
   primary-light: #17b353,
   secondary: #e96b3b,
   clean: #ffffff,
-  dark: #221e2c,
-  dark-deep: #1b1922
+  dark: #111317,
+  dark-deep: #1b1922,
+  grey-light: #c7c7c7
 );
 
 $color-primary: map-get($coloring, primary);
@@ -14,13 +15,14 @@ $color-secondary: map-get($coloring, secondary);
 $color-white: map-get($coloring, clean);
 $color-dark: map-get($coloring, dark);
 $color-dark-deep: map-get($coloring, dark-deep);
+$color-grey-light: map-get($coloring, grey-light);
 
 $padding: 15px;
 $padding-big: 30px;
 $padding-small: 5px;
 
 $margin: 15px;
-$margin-big: 30px;
+$margin-big: 45px;
 $margin-small: 5px;
 
 // -------- TYPOGRAPHY -------- //
@@ -30,3 +32,4 @@ $h2: 30px;
 $h3: 24px;
 $h4: 18px;
 $h5: 16px;
+$p: 13px;

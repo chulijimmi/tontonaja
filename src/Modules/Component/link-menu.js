@@ -44,7 +44,7 @@ export default function LinkComponent(props) {
 }
 
 // Click outside area handling
-function useOnClickOutside(ref, handler) {
+export function useOnClickOutside(ref, handler) {
   useEffect(
     () => {
       const listener = event => {

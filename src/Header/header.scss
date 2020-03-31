@@ -2,14 +2,8 @@
 @import "../CoreScss/variable";
 @import "../CoreScss/mixins";
 
-.container {
-  width: 100%;
-  height: auto;
-  padding: 0px 30px;
-}
-
 .header-container {
-  padding: $padding $padding-big;
+  padding: $padding $margin-big;
   background: rgb(16, 16, 26);
   background: linear-gradient(
     0deg,
@@ -18,6 +12,7 @@
     rgba(61, 162, 183, 0) 100%
   );
   display: flow-root;
+  box-shadow: 0 19px 20px rgb(51, 51, 51), 0 10px 12px rgb(14, 22, 33);
 }
 
 .header-menu-container {

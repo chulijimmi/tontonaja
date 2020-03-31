@@ -1,0 +1,34 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+// Panel section component
+.panel-section {
+  display: flow-root;
+  margin-left: $margin;
+
+  .panel-section-title {
+    font-weight: 400;
+    float: left;
+    color: $color-primary-light;
+  }
+
+  .panel-section-menu {
+    float: left;
+    margin-top: $margin-big;
+    margin-left: $margin + 10;
+    .panel-button {
+      margin-right: $margin;
+      border: 0px;
+      background: transparent;
+      color: $color-white;
+      letter-spacing: 1px;
+      padding: $padding-small;
+      font-size: 13px;
+      transition-duration: 0.5s;
+      &:hover {
+        cursor: pointer;
+        border-bottom: 2px solid $color-secondary;
+      }
+    }
+  }
+}

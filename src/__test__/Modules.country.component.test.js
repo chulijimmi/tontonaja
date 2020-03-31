@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { shallow } from "enzyme";
 import { mountWithProvider } from "./Helper";
 import CountryMenu, { CountryItem } from "../Modules/Countries/countries-menu";

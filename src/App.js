@@ -67,32 +67,34 @@ function MainApp({ history, context }) {
   return (
     <ConnectedRouter history={history} context={context}>
       <Suspense fallback={<div>Loading App...</div>}>
-        <HeaderComponent />
-        <Switch>
-          {routeMap.map(item => {
-            const RouteComponent = item.component;
-            if (item.parent) {
-              return (
-                <Route
-                  key={item.id}
-                  exact
-                  path={item.path}
-                  render={() => <Redirect to={`${location}/home`} />}
-                />
-              );
-            } else {
-              return (
-                <Route
-                  key={item.id}
-                  path={item.path}
-                  render={({ staticContext, ...props }) => (
-                    <RouteComponent {...props} />
-                  )}
-                />
-              );
-            }
-          })}
-        </Switch>
+        <>
+          <HeaderComponent />
+          <Switch>
+            {routeMap.map(item => {
+              const RouteComponent = item.component;
+              if (item.parent) {
+                return (
+                  <Route
+                    key={item.id}
+                    exact
+                    path={item.path}
+                    render={() => <Redirect to={`${location}/home`} />}
+                  />
+                );
+              } else {
+                return (
+                  <Route
+                    key={item.id}
+                    path={item.path}
+                    render={({ staticContext, ...props }) => (
+                      <RouteComponent {...props} />
+                    )}
+                  />
+                );
+              }
+            })}
+          </Switch>
+        </>
       </Suspense>
     </ConnectedRouter>
   );

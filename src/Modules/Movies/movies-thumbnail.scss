@@ -1,0 +1,66 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+.movie-thumbnail-container {
+  width: 260px;
+  height: 200px;
+  margin-right: $margin;
+  margin-left: $margin;
+  margin-bottom: $margin-big;
+  float: left;
+  position: relative;
+  border-radius: 4px;
+}
+
+.movie-thumbnail {
+  width: 100%;
+  height: 100%;
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  .movie-thumbnail-vote {
+    position: absolute;
+    left: $margin-small;
+    top: $margin-small;
+    background-color: $color-secondary;
+    padding: $padding-small;
+    font-size: 12px;
+    color: $color-white;
+    border-radius: 4px;
+    min-width: 18px;
+    text-align: center;
+  }
+  .shadow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    @include transition(background-color, 300ms);
+    transition: height 0.4s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      width: 100%;
+      height: 80%;
+      background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+  }
+
+  .movie-thumbnail-title {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: $color-white;
+    text-align: center;
+    background-color: rgba($color: #111317, $alpha: 0.5);
+    padding: $padding-small 0px;
+  }
+
+  .movie-thumnail-backdrop {
+    width: 260px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 50%; /* default value: image is centered*/
+    object-position: 0 0; /* positioned top left of the content box */
+    border-radius: 4px;
+  }
+}

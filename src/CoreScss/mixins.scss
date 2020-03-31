@@ -1,6 +1,9 @@
 /*
 * Responsive Break Point
 */
+
+@import "./variable.scss";
+
 @mixin breakpoint($point) {
   @if $point == desktop {
     @media (min-width: 1280px) {
@@ -18,5 +21,40 @@
     @media (min-width: 320px) and (max-width: 720px) {
       @content;
     }
+  }
+}
+
+@mixin transition($property, $duration) {
+  -webkit-transition: $property $duration ease;
+  -moz-transition: $property $duration ease;
+  transition: $property $duration ease;
+}
+
+@mixin rounded($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}
+
+@mixin button {
+  width: 100%;
+  border: 3px solid $color-primary-light;
+  background-color: $color-primary-light;
+  padding: $padding;
+  font-size: $h4;
+  color: $color-white;
+
+  @include transition(background-color, 300ms);
+  @include transition(box-shadow, 0.3s);
+  @include breakpoint(mobile) {
+    font-size: $h5;
+  }
+  @include rounded(4px);
+  &:hover {
+    box-shadow: -5px 10px 20px #16191f, 0 2px 2px #2f3a48;
+    cursor: pointer;
+    color: $color-primary;
+    border: 3px solid $color-primary-light;
+    background-color: transparent;
   }
 }
