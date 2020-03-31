@@ -1,2 +1,0 @@
-(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[5],{233:function(t,e,a){"use strict";a.r(e);var n=a(1),o=a.n(n);a(76);e.default=function(t){var e=t.title;return o.a.createElement("div",{className:"header-logo"},o.a.createElement("p",{className:"logo-title"},e))}},76:function(t,e,a){}}]);
-//# sourceMappingURL=5.1051b2eb.chunk.js.map
