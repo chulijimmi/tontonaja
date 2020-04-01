@@ -5,6 +5,11 @@
 @import "./variable.scss";
 
 @mixin breakpoint($point) {
+  @if $point == large-desktop {
+    @media (min-width: 1903px) {
+      @content;
+    }
+  }
   @if $point == desktop {
     @media (min-width: 1280px) {
       @content;
@@ -56,5 +61,25 @@
     color: $color-primary;
     border: 3px solid $color-primary-light;
     background-color: transparent;
+  }
+}
+
+@mixin button-footer {
+  width: 100%;
+  background: transparent;
+  border: none;
+  margin: 0px;
+  padding: $padding-small 0px;
+  color: $color-grey-light;
+  text-align: left;
+  font-size: 13px;
+  @include transition(color, 300ms);
+  @include transition(border, 0.3s);
+  &:hover {
+    cursor: pointer;
+    color: $color-secondary;
+  }
+  &:focus {
+    outline: 0;
   }
 }

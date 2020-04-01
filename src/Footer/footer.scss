@@ -1,0 +1,109 @@
+@import "../CoreScss/fontstyle";
+@import "../CoreScss/variable";
+@import "../CoreScss/mixins";
+
+.footer-container {
+  padding: $padding $margin-big;
+  background: rgb(16, 16, 26);
+  background: linear-gradient(
+    0deg,
+    rgb(7, 22, 34) 0%,
+    rgba(21, 21, 31, 1) 100%,
+    rgba(61, 162, 183, 0) 100%
+  );
+  display: flow-root;
+  box-shadow: 0 19px 20px rgb(51, 51, 51), 0 10px 12px rgb(14, 22, 33);
+  // Footer Parent Menu
+  .footer-menu {
+    width: 70%;
+    display: flow-root;
+    float: left;
+    .footer-parent-menu {
+      float: left;
+      list-style-type: none;
+      padding: 0px;
+      margin-right: $margin-big;
+      li {
+        font-size: $h4;
+        color: $color-primary-light;
+        a {
+          display: block;
+          margin: $margin 0px;
+          button {
+            @include button-footer;
+          }
+        }
+      }
+    }
+    // Footer Children Menu
+    .footer-child-menu {
+      list-style-type: none;
+      float: left;
+      padding: 0px $padding-small;
+      li {
+        margin-top: $margin;
+        margin-left: $margin-small;
+        font-size: $h5;
+        color: $color-primary;
+        span {
+          text-align: left;
+        }
+        a {
+          display: block;
+          button {
+            @include button-footer;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-download {
+    width: 30%;
+    display: flow-root;
+    text-align: right;
+    .title {
+      font-size: $h4;
+      color: $color-primary-light;
+      font-weight: 400;
+      line-height: 0em;
+      text-align: right;
+    }
+    .google-play {
+      float: right;
+      width: 50%;
+    }
+    .ios-store {
+      float: right;
+      width: 50%;
+    }
+    .loading-images {
+      width: 139px;
+      height: 50px;
+      background-color: $color-grey-light;
+    }
+  }
+
+  .footer-about {
+    display: flow-root;
+    .text {
+      color: $color-grey-light;
+      text-align: right;
+      letter-spacing: 0.5px;
+      font-size: 13px;
+    }
+  }
+}
+
+.footer-bottom {
+  width: 100%;
+  padding: $padding;
+  background-color: #05111b;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  span {
+    color: $color-white;
+    font-size: $p;
+  }
+}

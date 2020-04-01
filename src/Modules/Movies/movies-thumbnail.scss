@@ -1,7 +1,7 @@
 @import "../../CoreScss/variable";
 @import "../../CoreScss/mixins";
 .movie-thumbnail-container {
-  width: 260px;
+  width: 261px;
   height: 200px;
   margin-right: $margin;
   margin-left: $margin;
@@ -9,6 +9,9 @@
   float: left;
   position: relative;
   border-radius: 4px;
+  @include breakpoint(large-desktop) {
+    width: 277px;
+  }
 }
 
 .movie-thumbnail {
@@ -56,7 +59,7 @@
   }
 
   .movie-thumnail-backdrop {
-    width: 260px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
     object-position: 50% 50%; /* default value: image is centered*/

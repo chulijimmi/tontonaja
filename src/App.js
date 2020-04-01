@@ -9,6 +9,7 @@ import "./CoreScss/global.scss";
  * Do to test unit need to exports of Component
  */
 export const HeaderComponent = lazy(() => import("./Header/header-component"));
+export const FooterComponent = lazy(() => import("./Footer/footer-component"));
 export const ConnectedHome = lazy(() => import("./Modules/Home"));
 export const ConnectedGenres = lazy(() => import("./Modules/Genres"));
 export const ConnectedCountries = lazy(() => import("./Modules/Countries"));
@@ -94,6 +95,7 @@ function MainApp({ history, context }) {
               }
             })}
           </Switch>
+          <FooterComponent />
         </>
       </Suspense>
     </ConnectedRouter>
