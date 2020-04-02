@@ -1,2 +1,0 @@
-(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[23],{284:function(n,t,e){"use strict";e.r(t);var o=e(1),a=e.n(o);t.default=function(){return a.a.createElement("div",null,"Countries Component")}}}]);
-//# sourceMappingURL=23.85ce9460.chunk.js.map

@@ -1,0 +1,2 @@
+(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[33],{305:function(e,n,t){"use strict";t.r(n);var a=t(0),c=t.n(a),o=t(15),l=t(12);n.default=function(){return c.a.createElement(o.b,{path:"".concat(l.c,"/people"),render:function(){return c.a.createElement(a.Suspense,{fallback:c.a.createElement("div",null,"Loading")},c.a.createElement("div",null,"People Route"))}})}}}]);
+//# sourceMappingURL=33.93b89f09.chunk.js.map
