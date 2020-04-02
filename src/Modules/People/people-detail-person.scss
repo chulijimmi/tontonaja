@@ -1,0 +1,22 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.person {
+  float: left;
+  width: 300px;
+  margin-left: $margin-big;
+  display: table;
+  .images-profile {
+    width: 45px;
+    height: 45px;
+    float: left;
+    img {
+      @include fit-images;
+      @include rounded(45px);
+    }
+  }
+  .person-profile {
+    float: left;
+    margin-left: $margin;
+  }
+}

@@ -91,3 +91,16 @@
   object-position: 50% 50%;
   object-position: 0 0;
 }
+
+@mixin animated-loading {
+  animation: opacityanimate 2s infinite;
+}
+
+@keyframes opacityanimate {
+  from {
+    background-color: #e4e4e4;
+  }
+  to {
+    background-color: $color-grey-light;
+  }
+}

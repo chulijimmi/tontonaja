@@ -25,9 +25,9 @@ function MovieOverView({ movie }) {
           onClick={() => console.log("Click panel")}
         />
         <h3 className="title">Casting</h3>
-        <ListPeopleComponent data={movie.credits.cast} />
+        <ListPeopleComponent data={movie.credits.cast} credits="cast" />
         <h3 className="title">Crew</h3>
-        <ListPeopleComponent data={movie.credits.crew} />
+        <ListPeopleComponent data={movie.credits.crew} credits="crew" />
       </div>
     )
   );

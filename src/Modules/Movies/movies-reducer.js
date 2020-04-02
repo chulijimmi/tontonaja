@@ -46,7 +46,6 @@ export default (state = initState, action) => {
       };
 
     case SET_DETAIL_MOVIE:
-      console.log("SET_DETAIL_MOVIE", action);
       return {
         ...state,
         detail: action.movie

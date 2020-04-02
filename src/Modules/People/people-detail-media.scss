@@ -1,0 +1,17 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.media {
+  float: left;
+  width: 300px;
+  .images-backdrop {
+    width: 300px;
+    img {
+      @include fit-images;
+    }
+  }
+  .genre {
+    margin-right: $margin-small;
+    color: $color-primary;
+  }
+}

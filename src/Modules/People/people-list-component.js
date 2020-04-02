@@ -2,16 +2,23 @@ import React, { lazy, useCallback } from "react";
 import "./people-component.scss";
 import { useHistory } from "react-router-dom";
 import { location } from "../../Env";
+import { setPeople } from "./people-actions";
+import { connect } from "react-redux";
+
 const PeopleThumbnailComponent = lazy(() => import("./people-thumbnail"));
-function PeopleList({ data }) {
+
+function PeopleList({ data, credits, setPeople }) {
   let history = useHistory();
 
-  const handleOnclick = useCallback((peopleId, castId, creditId) => {
+  const handleOnclick = useCallback(people => {
+    const { id, cast_id, credit_id } = people;
     history.push({
       pathname: `${location}/people`,
-      search: `?id=${peopleId}`,
-      state: { peopleId }
+      search: `?id=${id}`,
+      state: { peopleId: id, castId: cast_id, creditId: credit_id }
     });
+
+    setPeople(people, credits);
   });
 
   const child = [];
@@ -26,9 +33,7 @@ function PeopleList({ data }) {
           profilePath={data[i].profile_path}
           department={data[i].department}
           character={data[i].character}
-          onClick={() =>
-            handleOnclick(data[i].id, data[i].cast_id, data[i].credit_id)
-          }
+          onClick={() => handleOnclick(data[i])}
         />
       );
   }
@@ -36,4 +41,9 @@ function PeopleList({ data }) {
   return <div className="people-thumbnail-area">{child}</div>;
 }
 
-export default PeopleList;
+const mapToProps = ({ People }) => {
+  const { selected } = People;
+  return { selected };
+};
+
+export default connect(mapToProps, { setPeople })(PeopleList);

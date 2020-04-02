@@ -1,0 +1,124 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.people-detail {
+  width: auto;
+  display: flow-root;
+}
+
+.people-detail-bio {
+  width: 50%;
+  margin: $margin + $margin 0px;
+  float: left;
+
+  .people-head-detail {
+    width: 100%;
+    display: table;
+    .people-head-detail-images {
+      width: 150px;
+      height: 150px;
+      background-color: $color-grey-light;
+      @include rounded(150px);
+      margin: $margin;
+      float: left;
+      img {
+        @include fit-images;
+        @include rounded(150px);
+      }
+    }
+    .people-head-detail-bio {
+      min-width: 300px;
+      min-height: 75px;
+      float: left;
+      margin-left: $margin;
+      @include rounded(4px);
+      .title-section {
+        color: $color-primary-light;
+        font-weight: 400;
+      }
+      .loading {
+        width: 100%;
+        animation: opacityanimate 1s infinite;
+        background-color: $color-grey-light;
+      }
+      p {
+        color: $color-grey-light;
+      }
+    }
+    .about {
+      display: table;
+      width: 600px;
+      padding: $padding;
+      padding-right: $padding-big;
+      word-wrap: break-word;
+      .title-section {
+        color: $color-grey-light;
+        font-weight: 400;
+      }
+      p {
+        color: $color-grey-light;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.credits-detail-bio {
+  width: 50%;
+  height: 100%;
+  display: flow-root;
+  .info {
+    p {
+      color: $color-grey-light;
+      text-overflow: ellipsis;
+    }
+  }
+  .detail-bio {
+    width: auto;
+    height: auto;
+    p {
+      color: $color-grey-light;
+      text-overflow: ellipsis;
+    }
+    h3 {
+      color: $color-secondary;
+      font-weight: 400;
+    }
+
+    .title-section {
+      color: $color-primary-light;
+    }
+
+    .info {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .detail-bio-loading {
+    display: block;
+    margin-top: $margin-big;
+    padding: $padding-big;
+    width: 600px;
+    height: 300px;
+    background-color: $color-dark-deep;
+    @include rounded(4px);
+
+    .info {
+      width: 50%;
+      height: 30px;
+      background-color: $color-primary-light;
+      @include rounded(4px);
+      @include animated-loading;
+    }
+
+    .media {
+      width: 80%;
+      height: 20px;
+      background-color: $color-primary-light;
+      margin-top: $margin-big;
+      @include rounded(4px);
+      @include animated-loading;
+    }
+  }
+}

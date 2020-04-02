@@ -11,7 +11,6 @@ function ChildrenCarousel(props) {
   let history = useHistory();
   const handleClick = useCallback(async () => {
     const resp = await fetchDetailMovie(props.item.id);
-    console.log("id movie carousel", props.item.id);
     if (resp !== false) {
       props.setDetailMovie(resp);
       history.push({
