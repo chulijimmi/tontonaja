@@ -46,23 +46,21 @@ const OverviewRef = forwardRef((props, ref) => {
 function Overview(props) {
   const ref = createRef();
   const [visible, setVisible] = useState(false);
-  const handleVisible = useCallback(() => {
-    setVisible(true);
-    console.log("ref visible", { ref, visible });
-  });
+  const handleVisible = useCallback(() => setVisible(true));
   useOnClickOutside(ref, () => setVisible(false));
   return (
     <div>
-      <MemoButton
-        label={"Overview"}
-        onClick={handleVisible}
-        key={props.item.id}
-      />
-      {visible && (
+      {visible ? (
         <OverviewRef
           text={props.item.overview}
           ref={ref}
           key={props.item.overview}
+        />
+      ) : (
+        <MemoButton
+          label={"Overview"}
+          onClick={handleVisible}
+          key={props.item.id}
         />
       )}
     </div>
@@ -77,20 +75,24 @@ function KnowForComponent({ movie }) {
         <h4 className="know-head">Known For</h4>
         {movie.map((item, index) => {
           return (
-            <div className="know-container" key={index.toString()}>
-              <div className="know-name">
-                <p>
-                  {item.title}{" "}
-                  <span className="vote-rate">Rating {item.vote_average}</span>
-                </p>
+            item.backdrop_path && (
+              <div className="know-container" key={index.toString()}>
+                <div className="know-name">
+                  <p>
+                    {item.title}{" "}
+                    <span className="vote-rate">
+                      Rating {item.vote_average}
+                    </span>
+                  </p>
+                </div>
+                <div className="know-backdrop">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
+                  />
+                </div>
+                <Overview item={item} />
               </div>
-              <div className="know-backdrop">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500/${item.backdrop_path}`}
-                />
-              </div>
-              <Overview item={item} />
-            </div>
+            )
           );
         })}
       </div>
