@@ -28,8 +28,10 @@ function MovieListing(props) {
         <MovieLoadingThumbnail />
       ) : (
         data.map(
-          item =>
-            item.backdrop_path && <MovieComponent {...item} key={item.id} />
+          (item, index) =>
+            item.backdrop_path && (
+              <MovieComponent {...item} key={index.toString()} />
+            )
         )
       )}
     </div>

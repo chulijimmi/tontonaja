@@ -1,7 +1,5 @@
 import React, { useCallback } from "react";
-import { connect } from "react-redux";
 import "./breadcrumbs.scss";
-import { useHistory } from "react-router-dom";
 import { location } from "../../Env";
 import { withRouter } from "react-router";
 
@@ -18,13 +16,14 @@ function createLink(args, start, end) {
 
 // Breadchrumbs Component with child link
 // based on location pathname
+// avoiding useHistory hook its not good performance
+// probably there is something bugs, we can use withRouter
+// HOC from react-router-dom to replace the history location
 function Breadcrumbs(props) {
-  const history = useHistory();
-  const pathname = props.router.location.pathname;
+  const pathname = props.location.pathname;
   const param = pathname.split("/");
   const handleClick = useCallback(loc => {
-    console.log("location", loc);
-    history.replace(`${location}/${loc}`);
+    props.history.replace(`${location}/${loc}`);
   });
 
   const child = [];
@@ -53,8 +52,4 @@ function Breadcrumbs(props) {
   );
 }
 
-const mapToProp = ({ router }) => {
-  return { router };
-};
-
-export default connect(mapToProp)(withRouter(Breadcrumbs));
+export default withRouter(Breadcrumbs);
