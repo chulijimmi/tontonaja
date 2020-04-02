@@ -1,12 +1,14 @@
-import { SET_GENRE_MOVIE } from "../Genres/genres-action";
-
+// Constant Variable Movie Modules
 export const MOVIE_LOADED = "Movies/movie_loaded";
 export const SET_LOADING_LOADED = "Movies/set_loading_loaded";
 export const SET_BANNER_MOVIE = "Movies/set_banner_movie";
 export const SET_SUGGESTION_MOVIE = "Movies/set_suggestion_movie";
 export const SET_LATEST_MOVE = "Movies/set_latest_movie";
 export const SET_DETAIL_MOVIE = "Movies/set_detail_movie";
+export const GET_DETAIL_MOVIE = "Movies/get_detail_movie";
 export const SET_MOVIE_SUGGESTION_GENRE = "Movies/set_movie_suggestion_genre";
+export const MOVIE_DISCOVER_LOADED = "Movies/discover_loaded";
+export const SET_MOVIE_DISCOVER = "Movies/set_movie_discover";
 
 // Saga task runner loaded movie
 export const movieLoaded = () => ({
@@ -43,7 +45,25 @@ export const setDetailMovie = movie => ({
   movie
 });
 
+// Saga task runner load detail movie by id
+export const getDetailMovie = movieId => ({
+  type: GET_DETAIL_MOVIE,
+  movieId
+});
+
+// Set movie suggestion by genre on Home
 export const setMovieSuggestionGenre = genre => ({
   type: SET_MOVIE_SUGGESTION_GENRE,
   genre
+});
+
+// Movie discover loaded
+export const movieDiscoverLoaded = () => ({
+  type: MOVIE_DISCOVER_LOADED
+});
+
+// Set response result movie discover
+export const setMovieDiscover = response => ({
+  type: SET_MOVIE_DISCOVER,
+  response
 });

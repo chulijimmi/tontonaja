@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Carousel from "react-material-ui-carousel";
 import autoBind from "auto-bind";
 import "./home-carousel.scss";
 import { connect } from "react-redux";
-
+import { useHistory } from "react-router-dom";
+import { location } from "../../Env";
+import { fetchDetailMovie } from "../Movies/movies-api";
+import { setDetailMovie } from "../Movies/movies-action";
 function ChildrenCarousel(props) {
+  let history = useHistory();
+  const handleClick = useCallback(async () => {
+    const resp = await fetchDetailMovie(props.item.id);
+    console.log("id movie carousel", props.item.id);
+    if (resp !== false) {
+      props.setDetailMovie(resp);
+      history.push({
+        pathname: `${location}/movie/detail`,
+        search: `?id=${props.item.id}`,
+        state: { movieId: props.item.id }
+      });
+    }
+  });
   return (
     <div className="carousel-banner">
-      <div className="carousel-content" onClick={props.onClick}>
-        <h1 className="carousel-title">
-          {props.item && props.item.title ? props.item.title : ""}
-        </h1>
+      <div className="carousel-content">
+        <h1 className="carousel-title">{props.item.title}</h1>
         <p className="carousel-caption">
-          {props.item && props.item.overview ? props.item.overview : ""}
+          {props.item && props.item.overview
+            ? props.item.overview.substring(0, 250)
+            : ""}{" "}
+          ...
         </p>
-        <button className="carousel-button">Watch Now</button>
+        <button className="carousel-button" onClick={handleClick}>
+          Watch Now
+        </button>
       </div>
       {props.item.backdrop_path && (
         <img
@@ -26,6 +45,10 @@ function ChildrenCarousel(props) {
   );
 }
 
+/***
+ * Render carousel component only have backdrop_path
+ *
+ */
 class CarouselComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -45,8 +68,8 @@ class CarouselComponent extends React.Component {
   }
 
   render() {
-    const { banner, movie_loaded } = this.props;
-    if (movie_loaded) return this.loading();
+    const { banner, movie_loaded, setDetailMovie } = this.props;
+    if (!movie_loaded) return this.loading();
     return (
       <Carousel
         className="carousel"
@@ -57,11 +80,13 @@ class CarouselComponent extends React.Component {
       >
         {banner.map((item, index) => {
           return (
-            <ChildrenCarousel
-              item={item}
-              key={index}
-              onClick={this.props.onClick.bind(this)}
-            />
+            item.backdrop_path && (
+              <ChildrenCarousel
+                item={item}
+                key={index}
+                setDetailMovie={setDetailMovie}
+              />
+            )
           );
         })}
       </Carousel>
@@ -74,4 +99,4 @@ const mapToProps = ({ Movies }) => {
   return { banner, movie_loaded };
 };
 
-export default connect(mapToProps)(CarouselComponent);
+export default connect(mapToProps, { setDetailMovie })(CarouselComponent);

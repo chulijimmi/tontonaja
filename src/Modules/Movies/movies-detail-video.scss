@@ -1,0 +1,14 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  padding: $margin;
+  display: table;
+  float: left;
+  position: relative;
+  img {
+    @include fit-images;
+  }
+}

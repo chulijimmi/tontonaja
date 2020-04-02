@@ -16,6 +16,7 @@
     float: left;
     margin-top: $margin-big;
     margin-left: $margin + 10;
+
     .panel-button {
       margin-right: $margin;
       border: 0px;
@@ -30,5 +31,8 @@
         border-bottom: 2px solid $color-secondary;
       }
     }
+  }
+  .small {
+    margin-top: $margin * 2;
   }
 }

@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { location } from "../../Env";
 
-const location = `${process.env.PUBLIC_URL}`;
-const Movie = props => {
-  console.log("Props Movie", props);
+const MovieDetail = lazy(() => import("./movies-detail"));
+const MovieListing = lazy(() => import("./movies-listing"));
+
+function Movie() {
   return (
-    <div>
-      <p>This is movie</p>
-      <Link to={`${location}/home`}>Home</Link>
-    </div>
+    <BrowserRouter forceRefresh={true}>
+      <Switch>
+        <Route
+          exact
+          path={`${location}/movie`}
+          render={() => (
+            <Suspense fallback={<div>Loading</div>}>
+              <MovieListing />
+            </Suspense>
+          )}
+        />
+        <Route
+          path={`${location}/movie/detail`}
+          render={() => <MovieDetail />}
+        />
+      </Switch>
+    </BrowserRouter>
   );
-};
+}
 
-export default connect()(Movie);
+export default Movie;

@@ -9,12 +9,20 @@ import "./panel-section.scss";
  * @param {String} title
  */
 export default function PanelSection(props) {
-  const { title, menu, onClick } = props;
+  const { title, menu, onClick, titleSize } = props;
   return (
     <div className="panel-section">
-      <h1 className="panel-section-title">{title}</h1>
+      {titleSize === "small" ? (
+        <h5 className="panel-section-title">{title}</h5>
+      ) : (
+        <h1 className="panel-section-title">{title}</h1>
+      )}
       {menu && (
-        <div className="panel-section-menu">
+        <div
+          className={`panel-section-menu ${
+            titleSize === "small" ? "small" : ""
+          }`}
+        >
           {menu.map(
             (item, index) =>
               index < 4 && (

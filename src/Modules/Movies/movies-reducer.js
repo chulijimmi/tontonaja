@@ -5,15 +5,19 @@ import {
   SET_LATEST_MOVE,
   SET_DETAIL_MOVIE,
   SET_MOVIE_SUGGESTION_GENRE,
-  SET_LOADING_LOADED
+  SET_LOADING_LOADED,
+  SET_MOVIE_DISCOVER
 } from "./movies-action";
 
 const initState = {
-  movie_loaded: true,
+  movie_loaded: false,
   banner: [],
   suggestion: [],
   latest: [],
-  detail: {}
+  detail: {
+    loaded: false
+  },
+  data: []
 };
 
 export default (state = initState, action) => {
@@ -42,11 +46,10 @@ export default (state = initState, action) => {
       };
 
     case SET_DETAIL_MOVIE:
+      console.log("SET_DETAIL_MOVIE", action);
       return {
         ...state,
-        detail: {
-          ...action.movie
-        }
+        detail: action.movie
       };
 
     // Produce set movie to top as array where equal with selection genre
@@ -78,6 +81,11 @@ export default (state = initState, action) => {
         suggestion: [...data]
       };
 
+    case SET_MOVIE_DISCOVER:
+      return {
+        ...state,
+        data: [...action.response, ...state.data]
+      };
     default:
       return state;
   }

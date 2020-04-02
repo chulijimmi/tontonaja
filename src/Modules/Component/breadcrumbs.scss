@@ -1,0 +1,35 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.breadcrumbs {
+  width: 100%;
+  margin-left: $margin;
+  display: table;
+  .title {
+    font-weight: 400;
+    color: $color-primary-light;
+  }
+  .child {
+    padding: $padding-small $padding;
+    background-color: $color-dark-deep;
+    display: table;
+    @include rounded(4px);
+  }
+  .link {
+    @include button-footer;
+    float: left;
+    width: auto;
+    margin-right: $margin;
+    ::after,
+    ::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -19px;
+      border-top: 19px solid transparent;
+      border-bottom: 19px solid transparent;
+      border-left: 1em solid;
+      right: -1em;
+    }
+  }
+}

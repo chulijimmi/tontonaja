@@ -1,0 +1,35 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+.movie-overview {
+  width: 100%;
+  margin: $margin;
+  .title {
+    color: $color-grey-light;
+    font-weight: 400;
+    margin-left: $margin;
+    .released {
+      font-size: $p;
+      color: $color-primary;
+    }
+  }
+  .overview {
+    color: $color-grey-light;
+    margin: 0px $margin;
+  }
+  .rate {
+    color: $color-grey-light;
+    margin-left: $margin;
+    margin-top: $margin;
+    span {
+      padding: $padding-small;
+      background-color: $color-secondary;
+      color: $color-white;
+      margin-left: $margin-small;
+      @include rounded(4px);
+    }
+  }
+  .released {
+    margin-left: $margin;
+    color: $color-grey-light;
+  }
+}

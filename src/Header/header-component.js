@@ -1,5 +1,7 @@
-import React, { Suspense } from "react";
-
+import React, { Suspense, useEffect } from "react";
+import { connect } from "react-redux";
+import { countryLoaded } from "../Modules/Countries/countries-action";
+import { genreLoaded } from "../Modules/Genres/genres-action";
 /**
  * Do to unit test need export component
  */
@@ -9,7 +11,11 @@ export const HeaderContainer = React.lazy(() => import("./header-container"));
 
 // HeaderComponent
 // Integrated with modules countries, genres, and searchs
-function HeaderComponent() {
+function HeaderComponent({ countryLoaded, genreLoaded }) {
+  useEffect(() => {
+    countryLoaded();
+    genreLoaded();
+  });
   return (
     <Suspense fallback={<div>Loading ...</div>}>
       <HeaderContainer>
@@ -20,4 +26,8 @@ function HeaderComponent() {
   );
 }
 
-export default HeaderComponent;
+const mtp = ({}) => {
+  return {};
+};
+
+export default connect(mtp, { countryLoaded, genreLoaded })(HeaderComponent);

@@ -1,0 +1,66 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.people-thumbnail-area {
+  display: block;
+  margin-left: $margin;
+  height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.people-thumbnail-area::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: $color-dark;
+}
+
+.people-thumbnail-area::-webkit-scrollbar {
+  width: 12px;
+  background-color: $color-dark;
+}
+
+.people-thumbnail-area::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $color-primary;
+}
+
+.people-container {
+  width: 100%;
+  height: 75px;
+  display: table;
+  margin-bottom: $margin;
+  border-bottom: 1px solid $color-dark-deep;
+  background-color: transparent;
+  padding: $padding;
+  @include transition(background-color, 300ms);
+  &:hover {
+    cursor: pointer;
+    background-color: $color-dark-light;
+  }
+  .people-images {
+    width: 76px;
+    height: 76px;
+    float: left;
+    img {
+      @include fit-images;
+      border-radius: 76px;
+    }
+  }
+
+  .people-info {
+    float: left;
+    margin-left: $margin;
+    .people-name {
+      margin: $margin-small 0px;
+      font-size: $h5;
+      color: $color-primary-light;
+    }
+    .people-bio {
+      margin: $margin-small 0px;
+      font-size: $p;
+      color: $color-grey-light;
+    }
+  }
+}

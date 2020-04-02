@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { Provider, ReactReduxContext } from "react-redux";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, BrowserRouter } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import configureStore, { history } from "./Store";
 import { location } from "./Env";
@@ -16,6 +16,7 @@ export const ConnectedCountries = lazy(() => import("./Modules/Countries"));
 export const ConnectedMovies = lazy(() => import("./Modules/Movies"));
 export const ConnectedTvSeries = lazy(() => import("./Modules/TvSeries"));
 export const ConnectedSearch = lazy(() => import("./Modules/Search"));
+export const ConnectedPeople = lazy(() => import("./Modules/People"));
 
 const store = configureStore();
 
@@ -61,6 +62,12 @@ const routeMap = [
     path: `${location}/search`,
     component: ConnectedSearch,
     parent: false
+  },
+  {
+    id: "people",
+    path: `${location}/people`,
+    component: ConnectedPeople,
+    parent: false
   }
 ];
 
@@ -68,35 +75,37 @@ function MainApp({ history, context }) {
   return (
     <ConnectedRouter history={history} context={context}>
       <Suspense fallback={<div>Loading App...</div>}>
-        <>
-          <HeaderComponent />
-          <Switch>
-            {routeMap.map(item => {
-              const RouteComponent = item.component;
-              if (item.parent) {
-                return (
-                  <Route
-                    key={item.id}
-                    exact
-                    path={item.path}
-                    render={() => <Redirect to={`${location}/home`} />}
-                  />
-                );
-              } else {
-                return (
-                  <Route
-                    key={item.id}
-                    path={item.path}
-                    render={({ staticContext, ...props }) => (
-                      <RouteComponent {...props} />
-                    )}
-                  />
-                );
-              }
-            })}
-          </Switch>
+        <BrowserRouter>
+          <>
+            <HeaderComponent />
+            <Switch>
+              {routeMap.map(item => {
+                const RouteComponent = item.component;
+                if (item.parent) {
+                  return (
+                    <Route
+                      key={item.id}
+                      exact
+                      path={item.path}
+                      render={() => <Redirect to={`${location}/home`} />}
+                    />
+                  );
+                } else {
+                  return (
+                    <Route
+                      key={item.id}
+                      path={item.path}
+                      render={({ staticContext, ...props }) => (
+                        <RouteComponent {...props} />
+                      )}
+                    />
+                  );
+                }
+              })}
+            </Switch>
+          </>
           <FooterComponent />
-        </>
+        </BrowserRouter>
       </Suspense>
     </ConnectedRouter>
   );

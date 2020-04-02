@@ -5,8 +5,9 @@ $coloring: (
   secondary: #e96b3b,
   clean: #ffffff,
   dark: #0c0e13,
-  dark-deep: #1b1922,
-  grey-light: #c7c7c7
+  dark-deep: #0a0c10,
+  grey-light: #c7c7c7,
+  dark-light: #1e222b
 );
 
 $color-primary: map-get($coloring, primary);
@@ -16,6 +17,7 @@ $color-white: map-get($coloring, clean);
 $color-dark: map-get($coloring, dark);
 $color-dark-deep: map-get($coloring, dark-deep);
 $color-grey-light: map-get($coloring, grey-light);
+$color-dark-light: map-get($coloring, dark-light);
 
 $padding: 15px;
 $padding-big: 30px;

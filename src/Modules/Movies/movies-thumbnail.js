@@ -8,7 +8,9 @@ const propsMovieThumbnail = (prevProps, nextProps) => {
 };
 
 // Render the movie thumbnails component
-function MovieThumbnail({ onClick, vote, title, backdrop }) {
+// Avoid to render bigger images, we use w500 as image size
+// thumbnail movies backdrop
+export function MovieThumbnail({ onClick, vote, title, backdrop }) {
   return (
     <div className="movie-thumbnail" onClick={onClick}>
       <span className="movie-thumbnail-vote">{vote}</span>
@@ -17,7 +19,7 @@ function MovieThumbnail({ onClick, vote, title, backdrop }) {
       </div>
       <img
         className="movie-thumnail-backdrop"
-        src={`https://image.tmdb.org/t/p/original/${backdrop}`}
+        src={`https://image.tmdb.org/t/p/w500/${backdrop}`}
       />
     </div>
   );

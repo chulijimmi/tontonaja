@@ -1,5 +1,19 @@
 @import "../../CoreScss/variable";
 @import "../../CoreScss/mixins";
+.movie-thumbnail-loading {
+  width: 261px;
+  height: 200px;
+  margin-right: $margin;
+  margin-left: $margin;
+  margin-bottom: $margin-big;
+  float: left;
+  position: relative;
+  border-radius: 4px;
+  background-color: $color-grey-light;
+  @include breakpoint(large-desktop) {
+    width: 277px;
+  }
+}
 .movie-thumbnail-container {
   width: 261px;
   height: 200px;
