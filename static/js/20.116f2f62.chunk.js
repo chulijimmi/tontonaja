@@ -1,2 +1,0 @@
-(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[20],{274:function(t,a,n){"use strict";n.r(a);var e=n(0),o=n.n(e);n(275);a.default=function(t){var a=t.backdrop,n=(t.video,t.title),e=Date.now();return a&&o.a.createElement("div",{className:"video-container"},o.a.createElement("img",{src:"https://image.tmdb.org/t/p/original/".concat(a,"?").concat(e),alt:n}))}},275:function(t,a,n){}}]);
-//# sourceMappingURL=20.116f2f62.chunk.js.map

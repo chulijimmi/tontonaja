@@ -1,0 +1,2 @@
+(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[33],{306:function(n,t,e){"use strict";e.r(t);var a=e(0),o=e.n(a);t.default=function(){return o.a.createElement("div",null,"Genres")}}}]);
+//# sourceMappingURL=33.ff6e218f.chunk.js.map

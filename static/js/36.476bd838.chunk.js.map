@@ -1,1 +1,0 @@
-{"version":3,"sources":["Modules/TvSeries/index.js"],"names":["TvSeries"],"mappings":"yGAAA,2BAMeA,UAJf,WACE,OAAO","file":"static/js/36.476bd838.chunk.js","sourcesContent":["import React from \"react\";\r\n\r\nfunction TvSeries() {\r\n  return <div>Tv Series</div>;\r\n}\r\n\r\nexport default TvSeries;\r\n"],"sourceRoot":""}

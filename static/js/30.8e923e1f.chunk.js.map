@@ -1,1 +1,0 @@
-{"version":3,"sources":["Modules/Countries/index.js"],"names":["Countries"],"mappings":"yGAAA,2BAMeA,UAJf,WACE,OAAO","file":"static/js/30.8e923e1f.chunk.js","sourcesContent":["import React from \"react\";\r\n\r\nfunction Countries() {\r\n  return <div>Countries Component</div>;\r\n}\r\n\r\nexport default Countries;\r\n"],"sourceRoot":""}
