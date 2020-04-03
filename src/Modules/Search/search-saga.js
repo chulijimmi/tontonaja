@@ -1,4 +1,4 @@
-import { fork, call, put, debounce, select } from "redux-saga/effects";
+import { fork, call, put, debounce } from "redux-saga/effects";
 import {
   SEARCH_MOVIE,
   setResponseSearch,
@@ -6,9 +6,13 @@ import {
   hideLoadingSearch
 } from "../Search/search-action";
 import { httpGet } from "../../Helper/HttpFetch";
+
+/**
+ * Task fetching data use debounce to set delay
+ * @param {String} action
+ */
 function* __searchMovie(action) {
   try {
-    const data = yield select(state => state.Search);
     const uri = `/3/search/movie?query=${action.payload}`;
     const response = yield call(httpGet, uri);
     if (response.status === 200) {

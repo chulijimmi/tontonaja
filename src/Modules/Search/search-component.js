@@ -9,6 +9,9 @@ import { location } from "../../Env";
 const SearchPopUp = lazy(() => import("./search-popup-component"));
 
 // Search Component
+// When user click the result search
+// it will handle by handleClickResult
+// this component integrated with search-saga
 function SearchComponent({
   position,
   data,
