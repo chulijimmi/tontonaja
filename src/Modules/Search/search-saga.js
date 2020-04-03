@@ -13,6 +13,7 @@ import { httpGet } from "../../Helper/HttpFetch";
  */
 function* __searchMovie(action) {
   try {
+    yield put(setLoadingSearch());
     const uri = `/3/search/movie?query=${action.payload}`;
     const response = yield call(httpGet, uri);
     if (response.status === 200) {
