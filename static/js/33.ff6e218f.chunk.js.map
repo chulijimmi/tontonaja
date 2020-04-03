@@ -1,1 +1,0 @@
-{"version":3,"sources":["Modules/Genres/index.js"],"names":["GenresComponent"],"mappings":"yGAAA,2BAMeA,UAJf,WACE,OAAO","file":"static/js/33.ff6e218f.chunk.js","sourcesContent":["import React from \"react\";\r\n\r\nfunction GenresComponent() {\r\n  return <div>Genres</div>;\r\n}\r\n\r\nexport default GenresComponent;\r\n"],"sourceRoot":""}

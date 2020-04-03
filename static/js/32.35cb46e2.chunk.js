@@ -1,0 +1,2 @@
+(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[32],{268:function(t,a,e){"use strict";e.r(a);var n=e(0),o=e.n(n);a.default=function(){return o.a.createElement("div",{className:"wrapper"},o.a.createElement("div",{className:"footer-bottom"},o.a.createElement("span",null,"\xa9 2020 tontonaja.com")))}}}]);
+//# sourceMappingURL=32.35cb46e2.chunk.js.map

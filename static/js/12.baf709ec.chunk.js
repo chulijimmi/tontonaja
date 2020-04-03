@@ -1,0 +1,2 @@
+(this.webpackJsonptontonaja=this.webpackJsonptontonaja||[]).push([[12],{266:function(n,t,a){"use strict";a.r(t);var e=a(0),o=a.n(e);a(95);t.default=function(n){return o.a.createElement("div",{className:"footer-container"},n.children)}},95:function(n,t,a){}}]);
+//# sourceMappingURL=12.baf709ec.chunk.js.map
