@@ -1,0 +1,148 @@
+@import "../../CoreScss/variable";
+@import "../../CoreScss/mixins";
+
+.search-container {
+  height: 50px;
+  position: absolute;
+  top: $margin;
+  right: 0;
+  z-index: 1010;
+}
+
+.search-position-left {
+  float: left;
+}
+
+.search-position-right {
+  float: right;
+  margin-right: $margin-big;
+  &:hover {
+    color: $color-dark;
+  }
+  &:focus {
+    color: $color-dark;
+  }
+}
+
+.search-input {
+  width: 300px;
+  padding: $padding;
+  background-color: $color-grey-light;
+  color: $color-dark;
+  border: 3px solid $color-primary;
+  @include rounded(4px);
+  @include transition(background-color, 300ms);
+  &:focus {
+    outline: none;
+    border: 3px solid $color-primary-light;
+    color: $color-white;
+    background-color: transparent;
+  }
+  &:hover {
+    color: $color-white;
+    border: 3px solid $color-primary-light;
+  }
+}
+
+.loading-results {
+  @include animated-loading;
+  background-color: $color-primary-light;
+  margin-top: $margin;
+}
+
+.loading-bar {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+.search-form {
+  right: $margin-big;
+  width: 100%;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 70px;
+  background-color: $color-dark-deep;
+  &:hover {
+    color: $color-dark;
+  }
+  &:focus {
+    color: $color-dark;
+  }
+
+  .search-results {
+    display: table;
+    border-bottom: 1px solid $color-dark-light;
+    background-color: $color-dark-deep;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-dark-light;
+    }
+    .backdrop {
+      float: left;
+      width: 115px;
+      height: 150px;
+      margin-left: $margin;
+      .image-backdrop {
+        height: 75px;
+        margin-bottom: $margin;
+        margin-top: $margin;
+        img {
+          @include fit-images;
+        }
+      }
+      .rating {
+        width: 30px;
+        @include rounded(4px);
+        padding: $padding-small;
+        background-color: $color-secondary;
+        p {
+          font-size: $p;
+          text-align: center;
+          padding: 0px;
+          margin: 0px;
+          color: $color-white;
+          font-weight: 400;
+        }
+      }
+    }
+    .info {
+      float: left;
+      width: 200px;
+      height: 120px;
+      padding: 0px $padding;
+      .title {
+        width: 100%;
+        height: 10px;
+        margin-bottom: $margin;
+        @include rounded(4px);
+        p {
+          font-weight: 400;
+          font-size: 12px;
+          color: $color-primary-light;
+        }
+      }
+      .genre {
+        width: 100%;
+        min-height: 10px;
+        margin-right: $margin-small;
+        overflow-wrap: break-word;
+        @include rounded(4px);
+        span {
+          color: $color-secondary;
+          font-size: 12px;
+        }
+      }
+      .overview {
+        width: 100%;
+        min-height: 10px;
+        @include rounded(4px);
+        p {
+          font-size: 11px;
+          color: $color-grey-light;
+        }
+      }
+    }
+  }
+}

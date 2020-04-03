@@ -63,6 +63,10 @@ export const GenreMenu = React.lazy(() =>
   import("../Modules/Genres/genres-menu")
 );
 
+const SearchComponent = React.lazy(() =>
+  import("../Modules/Search/search-component")
+);
+
 // Render the header link menu
 function getPopupMenu(id) {
   if (id === "country") return <CountryMenu />;
@@ -86,6 +90,7 @@ function HeaderMenu() {
             }
           />
         ))}
+        <SearchComponent position="right" />
       </nav>
     </Suspense>
   );
